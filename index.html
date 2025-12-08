@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Jesica Simanjuntak</title>
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0f172a;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-xl: 18px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #e5e7eb, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #020617;
+      box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.3);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: all 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .nav-links .primary-btn {
+      background: var(--accent);
+      color: #0b1120;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
+    }
+
+    .nav-links .primary-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.55);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3vw + 1rem, 3.2rem);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #e5e7eb, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .pill {
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.75);
+    }
+
+    .pill.accent {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.5);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      transition: all 0.18s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      border-color: transparent;
+      font-weight: 600;
+      box-shadow: 0 14px 40px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 55px rgba(56, 189, 248, 0.6);
+    }
+
+    .btn.ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .hero-card {
+      position: relative;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.28), rgba(15, 23, 42, 0.95));
+      border-radius: 28px;
+      padding: 1.4rem;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 3px solid rgba(15, 23, 42, 0.9);
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.85);
+      margin-bottom: 0.9rem;
+      background: #020617;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-card-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-card-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .small-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(226, 232, 240, 0.7);
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-contact {
+      text-align: right;
+    }
+
+    .hero-contact a {
+      font-size: 0.8rem;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .corner-orb {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.35), transparent 60%);
+      bottom: -80px;
+      right: -60px;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.75);
+    }
+
+    .about-text p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.8rem;
+    }
+
+    .info-item {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .info-item span {
+      display: block;
+    }
+
+    .info-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(148, 163, 184, 0.8);
+      margin-bottom: 0.15rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .skill-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    .skill-tags span {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .filter-pill {
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .filter-pill.active,
+    .filter-pill:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.7);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      position: relative;
+      padding: 1.1rem 1.2rem;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.9));
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      overflow: hidden;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+      cursor: default;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.6);
+      box-shadow: 0 20px 55px rgba(15, 23, 42, 0.85);
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .project-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .project-tools span {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      color: var(--muted);
+    }
+
+    .project-link a {
+      font-size: 0.78rem;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      color: var(--accent);
+    }
+
+    /* CV & Certificates */
+    .cv-cert-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.4fr);
+      gap: 1.5rem;
+    }
+
+    .cv-block p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .cv-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    .cert-list {
+      list-style: none;
+      font-size: 0.83rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .cert-list li strong {
+      color: var(--text);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 1.6rem;
+    }
+
+    .contact-list {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .contact-list span.label {
+      font-size: 0.75rem;
+      color: rgba(148, 163, 184, 0.9);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .contact-list a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: rgba(209, 213, 219, 0.9);
+    }
+
+    input,
+    textarea {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      padding: 0.6rem 0.9rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    textarea {
+      border-radius: 18px;
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(56, 189, 248, 0.9);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      padding: 1.4rem 0 1.8rem;
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero-grid,
+      .about-grid,
+      .cv-cert-layout,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3.8rem;
+      }
+
+      .hero-card {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+
+      .hero-contact {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 3.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .card {
+        padding: 1.1rem 1.1rem;
+      }
+
+      .hero-photo {
+        width: 110px;
+        height: 110px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="logo-circle">
+          <!-- GANTI INISIAL DI SINI -->
+          <span>JS</span>
+        </div>
+        <div class="brand-text">
+          <span>Portofolio</span>
+          <span>UI/UX · QA · Data Analyst</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">Tentang</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#projects">Proyek</a>
+        <a href="#cv">CV & Sertifikat</a>
+        <a href="#contact">Kontak</a>
+        <a href="#contact" class="primary-btn">Hire Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Portofolio</div>
+            <h1 class="hero-title">
+              Hi, saya <span>Jesica Aprilia Ega Simanjuntak</span> 👋
+            </h1>
+            <p class="hero-sub">
+              Seorang <strong>UI/UX Designer</strong>, <strong>Quality Assurance</strong>, dan <strong>Data Analyst</strong> 
+              yang fokus pada pengalaman pengguna yang intuitif, produk yang bebas bug, dan keputusan bisnis berbasis data.
+            </p>
+            <div class="hero-tags">
+              <span class="pill accent">UI/UX Design</span>
+              <span class="pill">Usability Testing</span>
+              <span class="pill">Manual & Automation Testing</span>
+              <span class="pill">Data Cleaning & Visualization</span>
+              <span class="pill">SQL · Python · Analytics</span>
+            </div>
+            <div class="hero-actions">
+              <a href="#projects" class="btn primary">Lihat Proyek</a>
+              <a href="#cv" class="btn ghost">Download CV</a>
+            </div>
+            <div class="hero-meta">
+              <span><strong>Domisili:</strong> Balige, Toba, Sumatera Utara</span>
+              <span><strong>Email:</strong> jesicaaprilia2604@gmail.com</span>
+              <span><strong>Available:</strong> Freelance / Full-time / Internship</span>
+            </div>
+          </div>
+          <div>
+            <div class="hero-card">
+              <div class="hero-photo">
+                <!-- GANTI SRC FOTO KAMU -->
+                <img src="foto-kamu.png" alt="Foto Profil" />
+              </div>
+              <div class="hero-card-name">Nama Lengkap Kamu</div>
+              <div class="hero-card-role">UI/UX · Quality Assurance · Data Analyst</div>
+              <div class="hero-badges">
+                <span class="hero-badge">Figma · Prototyping</span>
+                <span class="hero-badge">Test Case · Bug Report</span>
+                <span class="hero-badge">SQL · Dashboard</span>
+              </div>
+              <div class="hero-footer">
+                <div>
+                  <div class="small-label">Fokus Karier</div>
+                  <div>Product Design, QA, & Data-driven Product Development</div>
+                </div>
+                <div class="hero-contact">
+                  <div class="small-label">Kontak</div>
+                  <a href="mailto:namakamu@email.com">Email saya →</a>
+                </div>
+              </div>
+              <div class="corner-orb"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">About</div>
+          <h2 class="section-title">Tentang Saya</h2>
+          <p class="section-desc">
+            Ringkasan singkat tentang latar belakang kamu, pendidikan, minat profesional, dan 
+            apa yang membedakanmu sebagai UI/UX Designer, QA, dan Data Analyst.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card about-text">
+            <p>
+              Saya adalah seorang <strong>UI/UX Designer</strong>, <strong>Quality Assurance</strong>, dan 
+              <strong>Data Analyst</strong> yang tertarik membangun produk digital yang <em>user-centered</em>, 
+              stabil, dan didukung insight data. Pengalaman saya mencakup perancangan antarmuka, 
+              penyusunan test plan & test case, hingga analisis data untuk mendukung keputusan bisnis.
+            </p>
+            <p>
+              Dalam setiap proyek, saya berusaha menghubungkan tiga hal: <strong>kebutuhan pengguna</strong>, 
+              <strong>kualitas sistem</strong>, dan <strong>data</strong>. Saya nyaman bekerja di lingkungan 
+              kolaboratif lintas tim (designer, developer, product manager, dan stakeholder).
+            </p>
+
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">Nama Lengkap</span>
+                <span>Nama Lengkap Kamu</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Domisili</span>
+                <span>Kota, Provinsi, Negara</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Pendidikan</span>
+                <span>Program Studi / Universitas</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Bahasa</span>
+                <span>Bahasa Indonesia, English (Level)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">Role Utama</span>
+                <span>UI/UX Designer · Quality Assurance · Data Analyst</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Email</span>
+                <span>namakamu@email.com</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Telepon / WA</span>
+                <span>+62 xxx xxxx xxxx</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">LinkedIn</span>
+                <span><a href="#" target="_blank">linkedin.com/in/username</a></span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">GitHub / Portfolio</span>
+                <span><a href="#" target="_blank">github.com/username</a></span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Status</span>
+                <span>Available for: Internship / Full-time / Freelance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Skills</div>
+          <h2 class="section-title">Keahlian Utama</h2>
+          <p class="section-desc">
+            Kombinasi skills desain, pengujian perangkat lunak, dan analisis data yang mendukung 
+            proses end-to-end pengembangan produk digital.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card skill-card">
+            <h3>UI/UX Design</h3>
+            <p>
+              Riset pengguna, pembuatan wireframe dan high-fidelity UI, 
+              serta validasi desain melalui usability testing.
+            </p>
+            <div class="skill-tags">
+              <span>Figma</span>
+              <span>Wireframe & Prototype</span>
+              <span>Design System</span>
+              <span>User Flow</span>
+              <span>Usability Testing</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Quality Assurance</h3>
+            <p>
+              Menjamin kualitas aplikasi melalui test case yang sistematis, 
+              exploratory testing, dan automation dasar.
+            </p>
+            <div class="skill-tags">
+              <span>Manual Testing</span>
+              <span>Test Case / Test Scenario</span>
+              <span>Bug Reporting</span>
+              <span>Selenium / Katalon</span>
+              <span>API Testing</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Data Analysis</h3>
+            <p>
+              Mengolah dan menganalisis data untuk menghasilkan insight yang relevan 
+              bagi pengembangan produk dan keputusan bisnis.
+            </p>
+            <div class="skill-tags">
+              <span>SQL</span>
+              <span>Spreadsheet</span>
+              <span>Python (pandas)</span>
+              <span>Data Visualization</span>
+              <span>Dashboarding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Projects</div>
+          <h2 class="section-title">Proyek Terpilih</h2>
+          <p class="section-desc">
+            Beberapa proyek yang menggambarkan pengalaman saya di bidang UI/UX, Quality Assurance, 
+            dan Data Analyst. Silakan sesuaikan dengan proyek asli milik kamu.
+          </p>
+        </div>
+
+        <div class="projects-filters">
+          <button class="filter-pill active">Semua</button>
+          <button class="filter-pill">UI/UX</button>
+          <button class="filter-pill">QA</button>
+          <button class="filter-pill">Data Analyst</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1 -->
+          <article class="project-card">
+            <div class="project-tag">UI/UX Case Study</div>
+            <h3 class="project-title">Redesign Aplikasi X untuk Peningkatan Retensi Pengguna</h3>
+            <p class="project-desc">
+              Merancang ulang alur onboarding dan halaman utama aplikasi 
+              untuk mengurangi drop-off dan meningkatkan engagement pengguna baru.
+            </p>
+            <div class="project-meta">
+              <div class="project-tools">
+                <span>Figma</span>
+                <span>User Interview</span>
+                <span>Usability Test</span>
+              </div>
+              <div class="project-link">
+                <a href="#" target="_blank">Lihat studi lengkap →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="project-card">
+            <div class="project-tag">Quality Assurance</div>
+            <h3 class="project-title">Test Case & Regression Testing untuk Web E-Commerce</h3>
+            <p class="project-desc">
+              Menyusun test scenario untuk fitur checkout, melakukan regression testing 
+              pada setiap rilis, dan melaporkan bug secara terstruktur ke tim developer.
+            </p>
+            <div class="project-meta">
+              <div class="project-tools">
+                <span>Test Case</span>
+                <span>Selenium</span>
+                <span>Jira / Trello</span>
+              </div>
+              <div class="project-link">
+                <a href="#" target="_blank">Lihat detail pengujian →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3 -->
+          <article class="project-card">
+            <div class="project-tag">Data Analysis</div>
+            <h3 class="project-title">Analisis Perilaku Pengguna & Dashboard Interaktif</h3>
+            <p class="project-desc">
+              Mengolah data event pengguna, mengidentifikasi pola penggunaan fitur utama, 
+              dan menyusun dashboard untuk monitoring KPI produk.
+            </p>
+            <div class="project-meta">
+              <div class="project-tools">
+                <span>SQL</span>
+                <span>Python</span>
+                <span>Data Visualization</span>
+              </div>
+              <div class="project-link">
+                <a href="#" target="_blank">Lihat dashboard / repo →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV & CERTIFICATES -->
+    <section id="cv">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Profile</div>
+          <h2 class="section-title">CV & Sertifikat</h2>
+          <p class="section-desc">
+            Ringkasan dokumen profesional dan pelatihan yang mendukung keahlian 
+            di bidang UI/UX, QA, dan Data Analysis.
+          </p>
+        </div>
+
+        <div class="cv-cert-layout">
+          <div class="card cv-block">
+            <h3 style="font-size:0.95rem; margin-bottom:0.45rem;">Curriculum Vitae</h3>
+            <p>
+              CV berisi detail pengalaman kerja / magang, project, pendidikan, 
+              dan keterampilan utama kamu. Kamu dapat menautkan file PDF CV di tombol berikut:
+            </p>
+            <div class="cv-actions">
+              <!-- GANTI href MENJADI ALAMAT FILE CV KAMU -->
+              <a href="cv-kamu.pdf" class="btn primary" download>Download CV (PDF)</a>
+              <a href="#" class="btn ghost">Lihat di Google Drive</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size:0.95rem; margin-bottom:0.45rem;">Sertifikat & Pelatihan</h3>
+            <ul class="cert-list">
+              <li>
+                <strong>UI/UX Design</strong> – Nama Platform / Lembaga (Tahun)  
+                &nbsp;·&nbsp; User Research, Wireframing, Prototyping.
+              </li>
+              <li>
+                <strong>Software Testing / QA</strong> – Nama Platform / Lembaga (Tahun)  
+                &nbsp;·&nbsp; Manual & Automation Testing, Test Design.
+              </li>
+              <li>
+                <strong>Data Analytics</strong> – Nama Platform / Lembaga (Tahun)  
+                &nbsp;·&nbsp; SQL, Data Cleaning, Dashboard.
+              </li>
+              <li>
+                <strong>Tools Tambahan</strong> – misalnya: Git, Agile, dsb.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Contact</div>
+          <h2 class="section-title">Hubungi Saya</h2>
+          <p class="section-desc">
+            Tertarik bekerja sama atau mau ngobrol tentang proyek? Silakan hubungi saya melalui email, LinkedIn, 
+            atau kirim pesan lewat form berikut.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <div class="contact-list">
+              <div>
+                <span class="label">Email</span><br />
+                <a href="mailto:namakamu@email.com">jesicaaprilia2604@gmail.com</a>
+              </div>
+              <div>
+                <span class="label">LinkedIn</span><br />
+                <a href="#" target="_blank">linkedin.com/in/username</a>
+              </div>
+              <div>
+                <span class="label">GitHub / Portfolio</span><br />
+                <a href="#" target="_blank">github.com/username</a>
+              </div>
+              <div>
+                <span class="label">Lokasi</span><br />
+                Kota, Provinsi, Negara
+              </div>
+              <div>
+                <span class="label">Status</span><br />
+                Open for Collaboration & Opportunities
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <form class="contact-form">
+              <!-- Form ini hanya tampilan. Untuk benar-benar mengirim pesan, perlu backend / service tambahan. -->
+              <div class="field">
+                <label for="name">Nama</label>
+                <input type="text" id="name" placeholder="Nama lengkap pengirim" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email@pengirim.com" />
+              </div>
+              <div class="field">
+                <label for="message">Pesan</label>
+                <textarea id="message" placeholder="Tulis pesan kamu di sini..."></textarea>
+              </div>
+              <button type="button" class="btn primary">
+                Kirim Pesan (Mock)
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Nama Kamu. All rights reserved.</span>
+      <span style="opacity:0.8;">UI/UX · QA · Data Analyst Portfolio</span>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update tahun di footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
